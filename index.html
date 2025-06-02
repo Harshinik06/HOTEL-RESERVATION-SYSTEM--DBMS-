@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Haven Hotel - Reservation System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Luxury <span>Haven</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Rooms</a></li>
+                    <li><a href="#">Amenities</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Luxury & Comfort</h1>
+            <p>Book your stay at Luxury Haven Hotel and enjoy premium amenities, exceptional service, and unforgettable experiences.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Reservation Form -->
+        <section class="reservation-container">
+            <h2>Make a Reservation</h2>
+            <form id="reservation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="check-in">Check-in Date</label>
+                        <input type="date" id="check-in" name="check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Check-out Date</label>
+                        <input type="date" id="check-out" name="check-out" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adults">Adults</label>
+                        <select id="adults" name="adults" required>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="children">Children</label>
+                        <select id="children" name="children">
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block">Check Availability</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Room Types -->
+        <section class="room-types">
+            <h2>Our Rooms</h2>
+            <div class="rooms-grid" id="rooms-grid">
+                <!-- Room cards will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Selected Rooms Summary -->
+        <section class="selected-rooms" id="selected-rooms-section">
+            <h2>Your Selected Rooms</h2>
+            <div class="selected-rooms-list" id="selected-rooms-list">
+                <!-- Room items will be added here dynamically -->
+            </div>
+            <div class="total-price" id="total-price">
+                Total: $0
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <button type="button" class="btn btn-block" id="proceed-to-details">Proceed to Guest Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Information -->
+        <section class="customer-info">
+            <h2>Guest Information</h2>
+            <form id="customer-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests</label>
+                        <input type="text" id="special-requests" name="special-requests">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-block" id="proceed-to-payment">Proceed to Payment</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="payment-section">
+            <h2>Payment Details</h2>
+            <form id="payment-form">
+                <div class="payment-options">
+                    <h3>Select Payment Method</h3>
+                    
+                    <div class="payment-option">
+                        <label>
+                            <input type="radio" name="payment-method" value="credit-card" checked>
+                            Credit Card
+                        </label>
+                        <div class="payment-details active" id="credit-card-details">
+                            <!-- Credit card form fields -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-name">Name on Card</label>
+                                    <input type="text" id="card-name" name="card-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date">Expiry Date</label>
+                                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other payment methods (debit card, ATM card, GPay) -->
+                    <!-- ... -->
+                </div>
+                
+                <div class="transaction-summary" id="transaction-summary">
+                    <h3>Transaction Summary</h3>
+                    <p>Room charges: <span id="summary-room-charges">$0</span></p>
+                    <p>Taxes (10%): <span id="summary-taxes">$0</span></p>
+                    <p>Service fee: <span id="summary-service-fee">$25</span></p>
+                    <p class="total">Total amount: <span id="summary-total">$0</span></p>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block">Complete Reservation</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        
+        <!-- Success Message -->
+        <section class="success-message" id="success-message">
+            <h2>Reservation Confirmed!</h2>
+            <p>Your reservation has been successfully processed. A confirmation email has been sent to your email address.</p>
+            <p>Reservation ID: <strong id="reservation-id"></strong></p>
+            <button type="button" class="btn" onclick="window.location.reload()">Make Another Reservation</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Luxury Haven Hotel offers premium accommodations with exceptional service in a prime location.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Luxury Avenue, City Center</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Email: info@luxuryhaven.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Rooms</a>
+                <a href="#">Amenities</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2025 Luxury Haven Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
